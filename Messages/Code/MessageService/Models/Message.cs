@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MessageService.Models;
 
-public partial class Message
+public partial class MessageItem
 {
     public long Id { get; set; }
 
@@ -11,7 +11,7 @@ public partial class Message
 
     public string Title { get; set; } = null!;
 
-    public string Message1 { get; set; } = null!;
+    public string Message { get; set; } = null!;
 
     public DateTime StartDate { get; set; }
 

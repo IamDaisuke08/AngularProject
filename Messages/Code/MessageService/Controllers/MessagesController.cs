@@ -22,14 +22,14 @@ namespace MessageService.Controllers
 
         // GET: api/Messages
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Message>>> GetMessages()
+        public async Task<ActionResult<IEnumerable<MessageItem>>> GetMessages()
         {
             return await _context.Messages.ToListAsync();
         }
 
         // GET: api/Messages/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Message>> GetMessage(long id)
+        public async Task<ActionResult<MessageItem>> GetMessage(long id)
         {
             var message = await _context.Messages.FindAsync(id);
 
@@ -44,7 +44,7 @@ namespace MessageService.Controllers
         // PUT: api/Messages/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMessage(long id, Message message)
+        public async Task<IActionResult> PutMessage(long id, MessageItem message)
         {
             if (id != message.Id)
             {
@@ -75,7 +75,7 @@ namespace MessageService.Controllers
         // POST: api/Messages
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Message>> PostMessage(Message message)
+        public async Task<ActionResult<MessageItem>> PostMessage(MessageItem message)
         {
             _context.Messages.Add(message);
             await _context.SaveChangesAsync();

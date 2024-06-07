@@ -15,7 +15,7 @@ public partial class MessageContext : DbContext
     {
     }
 
-    public virtual DbSet<Message> Messages { get; set; }
+    public virtual DbSet<MessageItem> Messages { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -28,7 +28,7 @@ public partial class MessageContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Message>(entity =>
+        modelBuilder.Entity<MessageItem>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Messages");
 
@@ -36,7 +36,7 @@ public partial class MessageContext : DbContext
 
             entity.Property(e => e.CountryCode).HasMaxLength(3);
             entity.Property(e => e.EndDate).HasColumnType("datetime");
-            entity.Property(e => e.Message1).HasColumnName("Message");
+            entity.Property(e => e.Message).HasColumnName("Message");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
             entity.Property(e => e.Title).HasMaxLength(100);
         });
