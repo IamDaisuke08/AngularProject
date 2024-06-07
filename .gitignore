@@ -46,6 +46,7 @@ packages/
 *.pidb
 *.log
 *.scc
+*.vsidx
 
 # Visual C++ cache files
 ipch/
