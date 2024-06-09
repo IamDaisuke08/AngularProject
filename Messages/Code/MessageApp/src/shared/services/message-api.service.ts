@@ -37,6 +37,11 @@ export class MessageApiService {
     return this.client.put(this.baseUrl + "/" + message.id, message, options).pipe(catchError(this.handleError));
   }
 
+  addMessage(message : MessageItem) {
+    let options = this.getStandarOptions();
+    return this.client.post(this.baseUrl, message, options).pipe(catchError(this.handleError));
+  }
+
   private handleError(error : HttpErrorResponse) {
     console.log('ERROR: ', error.error);
     return throwError(() => new Error('An error occured while connecting to the server. Please try again.', error.error));

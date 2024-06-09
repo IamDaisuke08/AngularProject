@@ -4,6 +4,7 @@
       <div class="form-group col-sm-6">
         <label for="countryCode">Country Code</label>
         <select 
+          id="countryCode"
           name="countryCode"
           class="form-select"
           [(ngModel)]="countryCode">
@@ -17,7 +18,7 @@
     <div class="row mt-3">
       <div class="form-group">
         <label for="title">Title</label>
-        <input name="title" type="text" class="form-control" id="title" placeholder="Title" [(ngModel)]="title">
+        <input id="title" name="title" type="text" class="form-control" id="title" placeholder="Title" [(ngModel)]="title">
       </div>
     </div>
     <div class="row mt-3">
@@ -30,6 +31,7 @@
       <div class="form-group col-sm-6">
         <label for="startDate">Start Date</label>
         <input 
+          id="startDate"
           name="startDate"
           type="datetime-local" 
           class="form-control" 
@@ -39,6 +41,7 @@
       <div class="form-group col-sm-6">
         <label for="endDate">End Date</label>
         <input 
+          id="endDate"
           name="endDate"
           type="datetime-local" 
           class="form-control" 

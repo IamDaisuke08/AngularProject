@@ -20,19 +20,31 @@ import { Router } from '@angular/router';
 })
 export class MessageMainComponent implements OnInit {
   messages: MessageItem[] = [];
-  countries! : CountryItem[];
+  countries : CountryItem[] = [];
 
-  filter: any;
+  filter: any = ()=>{};
 
   constructor(private messageService : MessageApiService, private countryService : CountryService, private events : EventService, private route : Router) { 
     this.events.listen('deleteMessage', (messageId) => {
       this.messageService.deleteMessage(messageId).subscribe(() => {
+      },
+      (error : any) => {
+        console.log(error.message);
+        this.loadMessages();
+      },
+      () => {
         this.loadMessages();
       });
     });
 
     this.events.listen('saveMessage', (message: MessageItem) => {
       this.messageService.updateMessage(message).subscribe(() => {
+      },
+      (error : any) => {
+        console.log(error.message);
+        this.loadMessages();
+      },
+      () => {
         this.loadMessages();
         message.onEditMode = false;
       });
