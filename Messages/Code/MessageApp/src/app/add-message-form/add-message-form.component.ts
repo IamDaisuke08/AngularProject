@@ -37,14 +37,19 @@ export class AddMessageFormComponent implements OnInit {
     let message = new MessageItem(0, this.countryCode, this.title, this.message, this.startDate, this.endDate, false);
     console.log(message);
     this.messageService.addMessage(message).subscribe(() => {
-      this.backToMain();
     },
     (error : any) => {
       alert(error.message);
+    },
+    () => {
+      this.backToMain();
     });
   }
   
   backToMain() {
-    this.route.navigate(['']);
+    this.route.navigate([''])
+      .then(() => {
+        window.location.reload();
+      });
   }
 }

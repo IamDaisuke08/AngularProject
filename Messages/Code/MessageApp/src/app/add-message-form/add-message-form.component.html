@@ -35,7 +35,7 @@
           name="startDate"
           type="datetime-local" 
           class="form-control" 
-          [ngModel]="startDate| date:'dd MM yyyy HH:mm:ss'" 
+          [ngModel]="startDate" 
           (ngModelChange)="startDate= $event">
       </div>
       <div class="form-group col-sm-6">
@@ -45,7 +45,7 @@
           name="endDate"
           type="datetime-local" 
           class="form-control" 
-          [ngModel]="endDate | date:'dd MM yyyy HH:mm:ss'" 
+          [ngModel]="endDate" 
           (ngModelChange)="endDate = $event">
       </div>
     </div>

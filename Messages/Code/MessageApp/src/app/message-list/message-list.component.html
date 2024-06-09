@@ -60,7 +60,7 @@
                             id="startDate"
                             type="datetime-local" 
                             class="form-control"
-                            [ngModel]="message.startDate | date:'dd MM yyyy HH:mm:ss'" 
+                            [ngModel]="message.startDate" 
                             (ngModelChange)="message.startDate = $event"
                             required>
                     </ng-template>
@@ -73,7 +73,7 @@
                         <input 
                             type="datetime-local" 
                             class="form-control" 
-                            [ngModel]="message.endDate | date:'dd MM yyyy HH:mm:ss'" 
+                            [ngModel]="message.endDate" 
                             (ngModelChange)="message.endDate = $event">
                     </ng-template>
                 </td>

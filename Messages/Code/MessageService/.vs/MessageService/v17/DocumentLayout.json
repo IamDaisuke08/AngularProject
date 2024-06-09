@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\AngularProject\\Messages\\Code\\MessageService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2D08D40B-B0B4-479A-A60B-1304F2DD356F}|MessageService.csproj|d:\\angularproject\\messages\\code\\messageservice\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D08D40B-B0B4-479A-A60B-1304F2DD356F}|MessageService.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2D08D40B-B0B4-479A-A60B-1304F2DD356F}|MessageService.csproj|d:\\angularproject\\messages\\code\\messageservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D08D40B-B0B4-479A-A60B-1304F2DD356F}|MessageService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MessagesController.cs",
+              "DocumentMoniker": "D:\\AngularProject\\Messages\\Code\\MessageService\\Controllers\\MessagesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
+              "ToolTip": "D:\\AngularProject\\Messages\\Code\\MessageService\\Controllers\\MessagesController.cs",
+              "RelativeToolTip": "Controllers\\MessagesController.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAIwF4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-09T09:32:18.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\AngularProject\\Messages\\Code\\MessageService\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\AngularProject\\Messages\\Code\\MessageService\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T05:59:16.274Z",
               "EditorCaption": ""
