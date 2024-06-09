@@ -1,40 +1,61 @@
-<form class="align-items-center justify-content-center">
-  <div class="form-row">
-    <div class="form-group col-sm-4">
-      <label for="countryCode">Country Code</label>
-      <select 
-        class="form-select"
-        [(ngModel)]="countryCode">
-          <option value="AAA">All</option>
-          <option *ngFor="let country of countries"
-              [value]="country.code"
-          >{{ country.name }}</option>
-      </select>
+<div class="container">
+  <form>
+    <div class="row mt-3">
+      <div class="form-group col-sm-6">
+        <label for="countryCode">Country Code</label>
+        <select 
+          name="countryCode"
+          class="form-select"
+          [(ngModel)]="countryCode">
+            <option value="AAA">All</option>
+            <option *ngFor="let country of countries"
+                [value]="country.code"
+            >{{ country.name }}</option>
+        </select>
+      </div>
     </div>
-  </div>
-  <div class="form-group col-sm-4">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" placeholder="Title">
-  </div>
-  <div class="form-group col-sm-4">
-    <label for="message">Message</label>
-    <input type="text" class="form-control" id="message" placeholder="Message">
-  </div>
-  <div>
-    <div class="form-group col-sm-4">
-      <label for="startDate">Start Date</label>
-      <input type="datetime-local" class="form-control" id="startDate">
+    <div class="row mt-3">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input name="title" type="text" class="form-control" id="title" placeholder="Title" [(ngModel)]="title">
+      </div>
     </div>
-    <div class="form-group col-sm-4">
-      <label for="endDate">End Date</label>
-      <input type="datetime-local"  class="form-control" id="endDate">
+    <div class="row mt-3">
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea rows="2" name="message" type="text" class="form-control" id="message" placeholder="Message" [(ngModel)]="message"></textarea>
+      </div>
     </div>
-  </div>
-  <div>
-    <button
-      type="submit"
-      class="btn btn-primary"
-      (click)="$event.preventDefault(); addNewMessage()"
-      >Add Wish</button>
-  </div>
-</form>
+    <div class="row mt-3">
+      <div class="form-group col-sm-6">
+        <label for="startDate">Start Date</label>
+        <input 
+          name="startDate"
+          type="datetime-local" 
+          class="form-control" 
+          [ngModel]="startDate| date:'dd MM yyyy HH:mm:ss'" 
+          (ngModelChange)="startDate= $event">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="endDate">End Date</label>
+        <input 
+          name="endDate"
+          type="datetime-local" 
+          class="form-control" 
+          [ngModel]="endDate | date:'dd MM yyyy HH:mm:ss'" 
+          (ngModelChange)="endDate = $event">
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div>
+        <button
+          type="submit"
+          class="btn btn-primary px-3"
+          (click)="$event.preventDefault(); addNewMessage()"
+          >Add Message</button>
+        <button type="button" class="btn btn-secondary px-3 mx-2" (click)="backToMain()">Back</button>
+      </div>
+    </div>
+  </form>
+</div>
