@@ -1,0 +1,46 @@
+<h4 class="mt-3"><span class="badge text-bg-secondary">Get message here</span></h4>
+<form class="row mt-3 gx-3 gy-2 align-items-center justify-content-center">
+    <div class="row mt-3">
+        <div class="form-group col-sm-2">
+            <label for="message-country">Country Code</label>
+        </div>
+        <div class="form-group col-sm-2">
+            <select 
+                id="message-country"
+                name="message-country"
+                class="form-select"
+                [(ngModel)]="countryCode">
+                <option value="AAA">All</option>
+                <option *ngFor="let country of countries"
+                    [value]="country.code"
+                >{{ country.name }}</option>
+            </select>
+        </div>
+        <div class="form-group col-sm-2">
+            <label class="px-4" for="messageDate">Message Date</label> 
+        </div>
+        <div class="form-group col-sm-3">
+            <input 
+              id="messageDate"
+              name="messageDate"
+              type="datetime-local" 
+              class="form-control" 
+              [ngModel]="messageDate" 
+              (ngModelChange)="messageDate = $event">
+        </div>
+        <div class="col-auto">
+            <button
+                id="btnGetMessage"
+                name="btnGetMessage"
+                type="submit"
+                class="btn btn-primary"
+                (click)="$event.preventDefault(); GetMessage()"
+                >Get Message</button>
+          </div>
+    </div>
+</form>
+<div *ngIf="messageText.length > 0">
+    <div class="mt-3">
+        <span class="px-2">Your message is: </span><label>{{ messageText }}</label>
+    </div>
+</div>

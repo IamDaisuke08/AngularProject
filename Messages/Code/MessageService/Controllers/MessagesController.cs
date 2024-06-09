@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MessageService.Models;
+using Microsoft.Data.SqlClient;
 
 namespace MessageService.Controllers
 {
@@ -39,6 +40,38 @@ namespace MessageService.Controllers
             }
 
             return message;
+        }
+
+        [HttpGet("{countryCode}/{messageDate}")]
+        public async Task<ActionResult<string>> GetMessage(string countryCode, DateTime messageDate)
+        {
+            var sqlParams = new List<SqlParameter>()
+            { 
+                new SqlParameter()
+                {
+                    ParameterName = "@CountryCode",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Value = countryCode,
+                    Size = 3
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@MessageDate",
+                    SqlDbType = System.Data.SqlDbType.DateTime,
+                    Value = messageDate,
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "@Message",
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                    Direction = System.Data.ParameterDirection.Output,
+                    Size = 300
+                }
+            };
+
+            await _context.Database.ExecuteSqlRawAsync($"EXEC [dbo].[GetMessage] @CountryCode, @MessageDate, @Message OUT", sqlParams.ToArray());
+            var message = sqlParams[2].Value.ToString();
+            return string.IsNullOrEmpty(message) ? "No message for given country code and date." : message;
         }
 
         // PUT: api/Messages/5

@@ -10,11 +10,12 @@ import { MessageListComponent } from '../message-list/message-list.component';
 import { MessageFilterComponent } from '../message-filter/message-filter.component';
 import { EventService } from '../../shared/services/EventService';
 import { Router } from '@angular/router';
+import { GetMessageComponent } from '../get-message/get-message.component';
 
 @Component({
   selector: 'app-message-main',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, MessageListComponent, MessageFilterComponent],
+  imports: [RouterOutlet, CommonModule, FormsModule, MessageListComponent, MessageFilterComponent, GetMessageComponent],
   templateUrl: './message-main.component.html',
   styleUrl: './message-main.component.css'
 })
