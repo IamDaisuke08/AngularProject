@@ -1,0 +1,93 @@
+<div *ngIf="messages.length === 0; else showMessages">
+    No messages to show...
+</div>
+
+<ng-template #showMessages>
+    <table class="table table-sm table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Country Code</th>
+                <th scope="col">Title</th>
+                <th scope="col">Message</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th class="text-center" scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let message of messages">
+                <th scope="row">{{ message.id }}</th>
+                <td class="col-2">
+                    <div *ngIf="!message.onEditMode; else editCountryCode">
+                        {{ message.countryCode }}
+                    </div>
+                    <ng-template #editCountryCode>
+                        <div class="container col-sm">
+                            <select 
+                                class="form-select"
+                                [(ngModel)]="message.countryCode">
+                                    <option value="AAA">All</option>
+                                    <option *ngFor="let country of countries"
+                                        [value]="country.code"
+                                    >{{ country.name }}</option>
+                            </select>
+                        </div>
+                    </ng-template>
+                </td>
+                <td class="col-2">
+                    <div *ngIf="!message.onEditMode; else editTitle">
+                        {{ message.title}}
+                    </div>
+                    <ng-template #editTitle>
+                        <input type="text" class="form-control" [(ngModel)]="message.title">
+                    </ng-template>
+                </td>
+                <td class="col-3">
+                    <div *ngIf="!message.onEditMode; else editMessage">
+                        {{ message.message}}
+                    </div>
+                    <ng-template #editMessage>
+                        <input type="text" class="form-control" [(ngModel)]="message.message">
+                    </ng-template>
+                </td>
+                <td class="col-2">
+                    <div *ngIf="!message.onEditMode; else editStartDate">
+                        {{ message.startDate | date: 'dd MMM yyyy HH:mm:ss' }}
+                    </div>
+                    <ng-template #editStartDate>
+                        <input 
+                            id="startDate"
+                            type="datetime-local" 
+                            class="form-control"
+                            [ngModel]="message.startDate | date:'dd MM yyyy HH:mm:ss'" 
+                            (ngModelChange)="message.startDate = $event"
+                            required>
+                    </ng-template>
+                </td>
+                <td class="col-2">
+                    <div *ngIf="!message.onEditMode; else editEndDate">
+                        {{ message.endDate | date: 'dd MMM yyyy HH:mm:ss'}}
+                    </div>
+                    <ng-template #editEndDate>
+                        <input 
+                            type="datetime-local" 
+                            class="form-control" 
+                            [ngModel]="message.endDate | date:'dd MM yyyy HH:mm:ss'" 
+                            (ngModelChange)="message.endDate = $event">
+                    </ng-template>
+                </td>
+                <td class="col-2 text-center">
+                    <div *ngIf="!message.onEditMode; else showSaveCancel">
+                        <i class="fa fa-pencil-square-o px-2" aria-hidden="true" (click)="onEdit(message)"></i>
+                        <i class="fa fa-trash-o px-2" aria-hidden="true" (click)="deleteMessage(message.id)"></i>
+                    </div>
+                    <ng-template #showSaveCancel>
+                        <i class="fa fa-floppy-o px-2" aria-hidden="true" (click)="saveMessage(message)"></i>
+                        <i class="fa fa-ban px-2" aria-hidden="true" (click)="onCancelEdit(message)"></i>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>

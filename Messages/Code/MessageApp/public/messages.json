@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "countryCode": "AAA",
+    "title": "Jan 2021",
+    "message": "Hello from 2021",
+    "startDate": "2021-01-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 2,
+    "countryCode": "AAA",
+    "title": "Jan 2022",
+    "message": "Hello from 2022",
+    "startDate": "2022-01-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 3,
+    "countryCode": "AAA",
+    "title": "Jan 2023",
+    "message": "Hello from 2023",
+    "startDate": "2023-01-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 4,
+    "countryCode": "NZL",
+    "title": "NZ 2021",
+    "message": "Kia Ora from September 2021",
+    "startDate": "2021-09-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 5,
+    "countryCode": "NZL",
+    "title": "NZ 2022",
+    "message": "Kia Ora from September 2022",
+    "startDate": "2022-09-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 6,
+    "countryCode": "GBR",
+    "title": "UK 2021",
+    "message": "Good day from UK September 2021",
+    "startDate": "2021-09-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 7,
+    "countryCode": "GBR",
+    "title": "UK 2022",
+    "message": "Good day from UK September 2022",
+    "startDate": "2022-09-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 8,
+    "countryCode": "GBR",
+    "title": "UK Dec 2021",
+    "message": "Happy Holidays from UK 2021-2022",
+    "startDate": "2021-12-20T00:00:00",
+    "endDate": "2022-01-20T00:00:00"
+  },
+  {
+    "id": 9,
+    "countryCode": "GBR",
+    "title": "UK Dec 2022",
+    "message": "Happy Holidays from UK 2022-2023",
+    "startDate": "2022-12-20T00:00:00",
+    "endDate": "2023-01-20T00:00:00"
+  },
+  {
+    "id": 10,
+    "countryCode": "FRA",
+    "title": "FR Dec 2021",
+    "message": "Bonnes fêtes from FR 2021-2022",
+    "startDate": "2021-12-20T00:00:00",
+    "endDate": "2022-01-20T00:00:00"
+  },
+  {
+    "id": 11,
+    "countryCode": "FRA",
+    "title": "FR Dec 2022",
+    "message": "Bonnes fêtes from FR 2022-2023",
+    "startDate": "2022-12-20T00:00:00",
+    "endDate": "2023-01-20T00:00:00"
+  },
+  {
+    "id": 12,
+    "countryCode": "PHL",
+    "title": "PH 2021",
+    "message": "Mabuhay from PH September 2021",
+    "startDate": "2021-09-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 13,
+    "countryCode": "PHL",
+    "title": "PH 2022",
+    "message": "Mabuhay from PH September 2022",
+    "startDate": "2022-09-01T00:00:00",
+    "endDate": null
+  },
+  {
+    "id": 14,
+    "countryCode": "PHL",
+    "title": "PH Dec 2021",
+    "message": "Maligayang Pasko from PH 2021-2022",
+    "startDate": "2021-12-20T00:00:00",
+    "endDate": "2022-01-20T00:00:00"
+  },
+  {
+    "id": 15,
+    "countryCode": "PHL",
+    "title": "PH Dec 2022",
+    "message": "Maligayang Pasko from PH 2022-2023",
+    "startDate": "2022-12-20T00:00:00",
+    "endDate": "2023-01-20T00:00:00"
+  }
+]

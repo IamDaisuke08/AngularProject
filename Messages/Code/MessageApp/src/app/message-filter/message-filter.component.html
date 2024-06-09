@@ -1,0 +1,11 @@
+<div class="col-sm-5">
+    <select 
+        class="form-select"
+        [(ngModel)]="listFilter"
+        (ngModelChange)="updateFilter($event)">
+            <option value="AAA">All</option>
+            <option *ngFor="let country of countries"
+                [value]="country.code"
+            >{{ country.name }}</option>
+    </select>
+</div>
